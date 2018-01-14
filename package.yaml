@@ -1,7 +1,7 @@
 name:                leek-wars-generator-haskell-server
 version:             0.1.0.0
 github:              "Shakadak/leek-wars-generator-haskell-server"
-license:             BSD3
+license:             MIT
 author:              "Nathanaël Pineau"
 maintainer:          "nathanael.pineau@gmail.com"
 copyright:           "2018 Nathanaël Pineau"
@@ -21,12 +21,28 @@ description:         Please see the README on Github at <https://github.com/Shak
 
 dependencies:
 - base >= 4.7 && < 5
+- servant-server
+- aeson
+- aeson-compat
+- attoparsec
+- base-compat
+- blaze-html
+- blaze-markup
+- bytestring
+- directory
+- http-media
+- lucid
+- mtl
+- string-conversions
+- time
+- wai
+- warp
 
 library:
   source-dirs: src
 
 executables:
-  leek-wars-generator-haskell-server-exe:
+  lwghs:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -37,7 +53,7 @@ executables:
     - leek-wars-generator-haskell-server
 
 tests:
-  leek-wars-generator-haskell-server-test:
+  lwghs-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
